@@ -10,9 +10,9 @@ export class CrudServiceService {
   getProductList() {
     return this._http.get("http://localhost:3000/list");
   }
-  addProduct(product) {
-    return this._http.post("http://localhost:3000/addproduct", product)
-  }
+  // addProduct(product) {
+  //   return this._http.post("http://localhost:3000/addproduct", product)
+  // }
   deleteProduct(Id) {
     let delteUrl="http://localhost:3000/delete";
     return this._http.delete(`${delteUrl}?userId=${Id}`);

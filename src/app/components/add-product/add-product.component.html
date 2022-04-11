@@ -22,16 +22,16 @@
                 formControlName="ProductPrice" maxlength="10">
             <!-- <span class="error" *ngIf="phone.invalid && phone.touched ">Number should be 10 Charecters </span> -->
         </div>
-        <!-- <div class="form-group">
+         <div class="form-group">
             <label for="exampleInputEmail1">Image</label>
             <input type="file" class="form-control" (change)="onchangefile($event)" formControlName="productImg" aria-describedby="emailHelp"
              >
-            <span class="error" *ngIf="name.invalid && name.touched">This field is required </span>
-        </div> -->
+          
+        </div>
         <!-- <img src={{url}} width="220x" height="250px"> -->
         <!-- <button type="submit" class="btn btn-primary my-3" (click)="uloadfile()">upload</button> -->
 
-        <button type="submit" class="btn btn-danger my-3" (click)="addCustomerFun()">Submit</button>
+        <button type="submit" class="btn btn-danger my-3" (click)="uloadfile()">Submit</button>
     </form>
     </div>
 </div>

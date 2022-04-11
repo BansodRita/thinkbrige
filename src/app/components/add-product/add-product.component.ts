@@ -24,13 +24,13 @@ export class AddProductComponent implements OnInit {
   // get phone() {
   //   return this.addProduct.get('customerPhone');
   // }
-  addCustomerFun() {
-    console.log(this.addProduct.value)
-    this.apiservice.addProduct(this.addProduct.value).subscribe((data) => {
-      console.log(data);
-    });
-    this.clearForm();
-  }
+  // addCustomerFun() {
+  //   console.log(this.addProduct.value)
+  //   this.apiservice.addProduct(this.addProduct.value).subscribe((data) => {
+  //     console.log(data);
+  //   });
+  //   this.clearForm();
+  // }
   clearForm() {
     this.addProduct.reset();
   }
@@ -43,9 +43,13 @@ export class AddProductComponent implements OnInit {
   }
   uloadfile(){
     const fd=new FormData();
-    fd.append('productImg', this.selectedfile, this.selectedfile.name)
+    fd.append('productImg', this.selectedfile, this.selectedfile.name);
+    fd.append('ProductName', this.addProduct.value.ProductName);
+    fd.append('ProductDescription', this.addProduct.value.ProductDescription);
+    fd.append('ProductPrice', this.addProduct.value.ProductPrice);
     this.apiservice.uloadFile(fd).subscribe((data)=>{
       console.log(data);
     })
+    this.clearForm();
   }
 }
